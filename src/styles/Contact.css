@@ -1,0 +1,185 @@
+/* Contact Section */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('../images/image6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: #282c34;
+  color: rgb(205, 103, 103);
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Title Animation */
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+.contact h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background-color: #61dafb;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Social Links Container */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards 0.5s;
+}
+
+/* Individual Social Link */
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  background-color: #d9a8a8;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 120px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+/* Hover Effects for Links */
+.social-link:hover {
+  transform: translateY(-10px) scale(1.1);
+  background-color: #61dafb;
+  box-shadow: 0px 0px 15px rgba(97, 218, 251, 0.8);
+}
+
+/* Social Icons */
+.social-icon {
+  width: 40px;  
+  height: 40px; 
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Hover Animation for Icons */
+.social-link:hover .social-icon {
+  transform: rotate(360deg) scale(1.2);
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
+}
+
+/* Text Inside Links */
+.social-link span {
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInText 1.5s ease-in-out forwards 0.8s;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text Fade-in Effect */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+  }
+
+  .social-links {
+    gap: 1rem;
+  }
+
+  .social-link {
+    width: 100px;
+    padding: 1rem;
+  }
+
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-link span {
+    font-size: 0.9rem;
+  }
+}
+
+/* Smallest Screens */
+@media (max-width: 480px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-links {
+    gap: 0.8rem;
+  }
+
+  .social-link {
+    width: 90px;
+    padding: 0.8rem;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-link span {
+    font-size: 0.8rem;
+  }
+}
